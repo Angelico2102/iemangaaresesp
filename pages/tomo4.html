@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="shortcut icon" href="../images/logo.png">
+
+<title>Inazuma Eleven Ares Tomo 4</title>
+
+    <style>
+        body {
+            background-image: url('https://media.discordapp.net/attachments/1174061575439650898/1178108088419614841/fondo.png');
+            background-repeat: repeat;
+            background-size: 400px;
+            font-family: Arial, sans-serif;
+        }
+
+        #manga-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 82vh;
+        }
+
+        #manga-page {
+            max-width: 100%;
+            max-height: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border: 5px solid #000;
+			height: 755px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+			margin-top: 20px;
+        }
+		
+        .nav-buttons-right {
+            display: flex;
+            justify-content: right;
+            margin-bottom: 20px;
+			margin-top: -65px;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #2d5ec4;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+		
+        .nav-button-twitter {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #2d5ec4;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+		
+        .nav-button-twitter:hover {
+            background-color: #123d8d;
+        }
+		
+		.nav-button-home {
+			display: inline-block;
+			justify-content: center;
+            padding: 10px 20px;
+            background-color: #2d5ec4;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #123d8d;
+        }
+		
+		.nav-button-home:hover {
+            background-color: #123d8d;
+        }
+    </style>
+	
+</head>
+
+<body>
+
+	<div class="nav-buttons">
+	<a class="nav-button-home" href="../index.html">Inicio</a>
+	</div>
+
+	<div align="center">
+        <div id="manga-pages">
+		</div>
+	</div>
+
+
+		<div class="nav-buttons">
+		    <button class="nav-button" id="prevPage">Anterior</button>
+            <select class="nav-button" id="pageSelector"></select>
+            <button class="nav-button" id="nextPage">Siguiente</button>
+		</div>
+
+	<div class="nav-buttons-right">
+		<a class="nav-button-twitter" href="https://twitter.com/IEMangaPics" target="_blank">@IEMangaPics</a>
+	</div>
+
+    <script src="../js/Tomo4.js"></script>
+</body>
+</html>
