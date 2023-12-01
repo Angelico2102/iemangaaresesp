@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextPageButton = document.getElementById("nextPage");
     const pageSelector = document.getElementById("pageSelector");
 
-    const totalPages = 160; // Cambia esto según tus necesidades
+    const totalPages = 160; // Ajusta según tus necesidades
     let currentPage = 1;
 
     function loadPage(page) {
-        mangaPagesContainer.innerHTML = `<img id="manga-page" src="../images/tomo1/${page}.png">`;
+        mangaPagesContainer.innerHTML = `<img id="manga-page" src="../images/tomo1/${page}.png" onclick="nextPage()">`;
     }
 
     function updatePageSelector() {
@@ -22,28 +22,45 @@ document.addEventListener("DOMContentLoaded", function () {
         pageSelector.value = currentPage;
     }
 
-    prevPageButton.addEventListener("click", function () {
+    function goToPrevPage() {
         if (currentPage > 1) {
             currentPage--;
             loadPage(currentPage);
             updatePageSelector();
         }
-    });
+    }
 
-    nextPageButton.addEventListener("click", function () {
+    function goToNextPage() {
         if (currentPage < totalPages) {
             currentPage++;
             loadPage(currentPage);
             updatePageSelector();
         }
-    });
+    }
+
+    function handleImageClick() {
+        if (currentPage < totalPages) {
+            goToNextPage();
+        }
+        // Puedes agregar aquí otras acciones si es necesario
+    }
+
+    prevPageButton.addEventListener("click", goToPrevPage);
+    nextPageButton.addEventListener("click", goToNextPage);
 
     pageSelector.addEventListener("change", function () {
         currentPage = parseInt(pageSelector.value);
         loadPage(currentPage);
     });
 
-    // Inicializar la página
+    mangaPagesContainer.addEventListener("click", handleImageClick);
+
     loadPage(currentPage);
     updatePageSelector();
 });
+
+function nextPage() {
+    const nextIndex = Math.min(parseInt(pageSelector.value) + 1, totalPages);
+    pageSelector.selectedIndex = nextIndex - 1;
+    pageSelector.dispatchEvent(new Event('change'));
+}
